@@ -50,37 +50,116 @@
 // }  // задание 3
 
 
-// double CalculateAverageGrade(int[] grades)
+double CalculateAverageGrade(int[] grades)
+{
+    int sum = 0;
+    foreach (int grade in grades)
+    {
+        sum += grade;
+    }
+    return (double)sum / grades.Length;
+}
+
+int CountFives(int[] grades)
+{
+    int count = 0;
+
+    foreach (int grade in grades)
+    {
+        if (grade == 5)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+int[] grades = { 4, 5, 3, 5, 4 };
+double average = CalculateAverageGrade(grades);
+int fives = CountFives(grades);
+
+System.Console.WriteLine(average);
+System.Console.WriteLine(fives); //задание 4
+
+
+// System.Console.WriteLine();
+// System.Console.WriteLine("Задание А");
+
+// void PrintDivider(){
+//     System.Console.WriteLine("------------");
+// }
+// System.Console.WriteLine("1");
+// PrintDivider();
+// System.Console.WriteLine("2");
+// PrintDivider();
+// System.Console.WriteLine("3");
+// PrintDivider();
+
+
+// System.Console.WriteLine();
+// System.Console.WriteLine("Задание Б");
+
+// void PrintPerson(string name, int age)
 // {
-//     int sum = 0;
-//     foreach (int grade in grades)
-//     {
-//         sum += grade;
-//     }
-//     return (double)sum / grades.Length;
+//     System.Console.WriteLine($"Его зовут {name} ему {age} лет");
+// }
+// PrintPerson("Максим", 17);
+// PrintPerson("Ярик", 13);
+// PrintPerson("Влад", 16);
+
+// Console.Write("Введите свою фамилию: ");
+// string surname = Console.ReadLine()!.Trim();
+
+// if (string.IsNullOrEmpty(surname)) {
+//     Console.WriteLine("Фамилия не введена. Завершение работы.");
+//     return;
 // }
 
-// int CountFives(int[] grades)
-// {
-//     int count = 0;
+// Random rnd = new(surname.GetHashCode() + DateTime.Now.DayOfYear);
 
-//     foreach (int grade in grades)
+// var assigned = Enumerable.Range(1, 10)
+//     .OrderBy(_ => rnd.Next())
+//     .Take(2)
+//     .OrderBy(x => x)
+//     .ToList();
+
+// Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
+
+
+
+// System.Console.WriteLine();
+// System.Console.WriteLine("Задание 8");
+
+// double CelsiusToFahrenheit(double celsius)
+// {
+//     return celsius * 9.0 / 5 + 32;
+// }
+// double result = CelsiusToFahrenheit(4);
+// System.Console.WriteLine(result);
+
+
+// System.Console.WriteLine();
+// System.Console.WriteLine("Задание 10");
+
+// bool IsPalindrome(string word)
+// {
+//     word = word.ToLower();
+
+//     int left = 0;
+//     int right = word.Length - 1;
+
+//     while (left < right)
 //     {
-//         if (grade == 5)
+//         if (word[left] != word[right])
 //         {
-//             count++;
+//             return false;
 //         }
+//         left++;
+//         right--;
+
 //     }
-//     return count;
+//     return true;
 // }
-
-
-// int[] grades = { 4, 5, 3, 5, 4 };
-// double average = CalculateAverageGrade(grades);
-// int fives = CountFives(grades);
-
-// System.Console.WriteLine(average);
-// System.Console.WriteLine(fives); задание 4
-
-
-
+// string word = "шалаш";
+// System.Console.WriteLine(IsPalindrome(word));
